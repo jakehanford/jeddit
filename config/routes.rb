@@ -2,15 +2,14 @@ Jeddit::Application.routes.draw do
 
   devise_for :users
 
-  resources :topics
+  resources :topics do
     resources :posts, except: [:index]
   end
 
   match "about" => 'welcome#about', via: :get
 
-  root to: 'welcome#index'
-
-
+  root :to => 'welcome#index'
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -67,4 +66,3 @@ Jeddit::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-end

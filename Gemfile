@@ -10,6 +10,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'cancan'
 gem 'redcarpet'
+gem 'will_paginate', '~> 3.0'
 
 #Avatars
 gem 'carrierwave'

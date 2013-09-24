@@ -1,4 +1,4 @@
-<h1><%= @topic.name %></h1>
+<h1><%= markdown @topic.name %></h1>
 
 <% if can? :update, @topic %>
   <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-primary btn-mini' %>
@@ -11,7 +11,7 @@
       <div class="media">
         <div class="media-body">
           <h4 class="media-heading">
-            <%= link_to post.title, post %>
+            <%= link_to (markdown post.title), [@topic, post] %>
           </h4>
         </div>
       </div>

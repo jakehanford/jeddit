@@ -9,6 +9,7 @@ gem 'faker'
 gem 'devise'
 gem 'jquery-rails'
 gem 'cancan'
+gem 'redcarpet'
 
 group :production do
   gem 'pg'

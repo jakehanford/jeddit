@@ -1,6 +1,10 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+	height: 100%;
+	width: 100%;
+}
 .avatar {
 	height: 50px;
 	width: 50px;
@@ -13,4 +17,24 @@
 	height: 50px;
 	width: 50px;
 	pointer-events: none;
+}
+.user-info {
+  margin-top: 9px;
+}
+.nav {
+  margin-top: 5px;
+  .navatar {
+  	float: right;
+	position: relative;
+	bottom: 10px;
+  }
+  .right {
+  	float: right;
+  }
+}
+
+.formcontainer {
+	width: 460px;
+	margin-right: auto;
+	margin-left: auto;
 }

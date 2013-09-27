@@ -30,9 +30,19 @@
 	border-radius: 6px 6px 6px 6px;
 	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px 1px 2px rgba(0, 0, 0, 0.05);
 }
+// Base Application Colors..
+
+// Blue
 .blumo {
 	background-color: rgb(54, 127, 255);
 }
+
+// Green
+.green {
+	background-color: rgb(0, 221, 0);
+}
+
+// Button effects
 .blumo:hover {
 	background-color: rgb(54, 100, 255);
 	color: white;

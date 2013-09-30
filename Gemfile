@@ -11,6 +11,8 @@ gem 'jquery-rails'
 gem 'cancan'
 gem 'redcarpet'
 gem 'will_paginate', '~> 3.0'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 #Avatars
 gem 'carrierwave'

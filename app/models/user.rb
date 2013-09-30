@@ -3,16 +3,33 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, :omniauth_providers => [:facebook]
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :avatar
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :avatar, :provider, :uid
   has_many :posts
   has_many :comments
 
   before_create :set_member
   mount_uploader :avatar, AvatarUploader
   # attr_accessible :title, :body
+
+def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      pass = Devise.friendly_token[0,20]
+      user = User.new(name:auth.extra.raw_info.name,
+                         provider:auth.provider,
+                         uid:auth.uid,
+                         email:auth.info.email,
+                         password: pass,
+                         password_confirmation: pass
+                        )
+      user.save
+    end
+    user
+  end
 
 ROLES = %w[member moderator admin]
 def role?(base_role)

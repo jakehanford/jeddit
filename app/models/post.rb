@@ -12,11 +12,7 @@ class Post < ActiveRecord::Base
   validates :user, presence: true 
 
   after_create :create_vote
-   
-  def comments
-    return @comments
-  end
-  
+     
   def up_vote
     update_vote(1)
     redirect_to :back

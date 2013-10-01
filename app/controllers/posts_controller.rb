@@ -45,6 +45,7 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
   def destroy
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])

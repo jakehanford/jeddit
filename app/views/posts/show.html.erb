@@ -1,18 +1,18 @@
-<h1><%= markdown @post.title %></h1>
-
 <div class="row">
   <div class="span8">
+    <%= render partial: 'votes/voter', locals: { topic: @topic, post: @post } %>
+      <h1><%= markdown @post.title %></h1>
     <small>
-		<%= image_tag(post.user.avatar.tiny.url) if post.user.avatar? %>
-		submitted <%= time_ago_in_words(post.created_at) %> ago by 
-		<%= post.user.name %><br/>
-		<%= post.comments.count %> Comments
+		<%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
+		submitted <%= time_ago_in_words(@post.created_at) %> ago by 
+		<%= @post.user.name %><br/>
+		<%= @post.comments.count %> Comments
     </small>
     <p><%= markdown @post.body %></p>
   </div>
   <h2><%= @comments.count %> Comments</h2>
 
-    <%= render @comments %>
+    <%= render partial: 'comments/form' %>
 
     <% if can? :create, Comment %>
       <hr/>
@@ -27,5 +27,12 @@
     <% if can? :destroy, @post %>
       <%= link_to "Delete Post", [@topic, @post], method: :delete, class: 'btn btn-large btn-block btn-danger', confirm: 'Are you sure you want to delete this post?' %>
     <% end %>   
+      <div>
+      <h3><%= pluralize(@post.points, 'point') %></h3>
+      <small>
+        <%= pluralize(@post.up_votes, 'up vote') %>, 
+        <%= pluralize(@post.down_votes, 'down vote') %>
+      </small>
+    </div>
   </div>
 </div>

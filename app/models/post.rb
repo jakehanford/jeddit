@@ -13,6 +13,10 @@ class Post < ActiveRecord::Base
 
   after_create :create_vote
    
+  def comments
+    return @comments
+  end
+  
   def up_vote
     update_vote(1)
     redirect_to :back
@@ -22,9 +26,11 @@ class Post < ActiveRecord::Base
     update_vote(-1)
     redirect_to :back
   end
+
   def points
     self.votes.sum(:value).to_i
   end 
+
   def update_rank
     age = (self.created_at - Time.new(1970,1,1)) / 86400
     new_rank = points + age
@@ -34,7 +40,7 @@ class Post < ActiveRecord::Base
 
   private
 
-  # Who ever created a post, should automatically be set to "voting" it up.
+  #Post automatically upvoted when created
   def create_vote
     user.votes.create(value: 1, post: self)
   end 

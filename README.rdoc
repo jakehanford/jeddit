@@ -1,1 +1,5 @@
 My improved version of reddit!
+
+During this project I am quickly learning how impressive websites like HN and Reddit really are.
+
+I am implenting similar features like upvoting, time decay, popular posts, user profiles, facebook login etc.

@@ -1,0 +1,7 @@
+<div class="favorite">
+  <% if favorite = current_user.favorited(post) %>
+    Favorited
+  <% else %>
+    Want to favorite this?
+  <% end %>
+</div>

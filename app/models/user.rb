@@ -45,6 +45,10 @@ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     self.favorites.where(post_id: post.id).first
   end
   
+  def voted(post)
+    self.votes.where(post_id: post.id).first
+  end
+  
     private
 
   def set_member

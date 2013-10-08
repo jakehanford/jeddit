@@ -11,9 +11,10 @@ class TopicsController < ApplicationController
   	@topic = Topic.find(params[:id])
     authorize! :read, @topic, message: "You need to be signed-in to do that."
     @posts = @topic.posts.paginate(page: params[:page], per_page: 10)
+    @posts = @topic.posts.includes(:user).includes(:comments).paginate(page: params[:page], per_page: 10)
   end
 
-   def edit
+  def edit
     @topic = Topic.find(params[:id])
     authorize! :update, @topic, message: "You need to be an admin to do that."
   end
@@ -40,6 +41,7 @@ class TopicsController < ApplicationController
       render :edit
     end
   end
+
   def destroy
     @topic = Topic.find(params[:id])
     name = @topic.name

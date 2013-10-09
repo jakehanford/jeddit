@@ -3,9 +3,9 @@
     <%= render partial: 'votes/voter', locals: { topic: @topic, post: @post } %>
       <h1><%= markdown @post.title %></h1>
     <small>
-		<%= image_tag(@post.user.avatar.url) if @post.user.avatar? %>
-		submitted <%= time_ago_in_words(@post.created_at) %> ago by 
-		<%= @post.user.name %><br/>
+		<%# image_tag(@post.user.avatar.url, class: "avatar") if @post.user.avatar? %>
+		<%= @post.user.name %> submitted <%= time_ago_in_words(@post.created_at) %> ago 
+		<br/>
 		<%= @post.comments.count %> Comments
     </small>
     <p><%= markdown @post.body %></p>

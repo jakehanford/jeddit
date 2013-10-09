@@ -11,6 +11,7 @@ html, body {
 	height: 50px;
 	width: 50px;
 	border-radius: 50%;
+	border: 2px solid grey;
 	margin-bottom: 10px;
 }
 .border {
@@ -46,4 +47,9 @@ html, body {
 }
 .voted {
   opacity: 0.5;
+}
+.editbump {
+	position: relative;
+	float: right;
+	bottom: 60px;
 }

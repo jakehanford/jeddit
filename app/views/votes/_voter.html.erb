@@ -1,3 +1,4 @@
+<% if current_user %>
 <div class="vote-arrows pull-left">
   <div>
     <%= link_to " ", 
@@ -13,3 +14,4 @@
       class: "glyphicon glyphicon-chevron-down #{(current_user.voted(post) && current_user.voted(post).down_vote?) ? 'voted' : '' }" %>
   </div>
 </div>
+<% end %>

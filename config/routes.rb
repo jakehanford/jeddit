@@ -19,7 +19,6 @@ Jeddit::Application.routes.draw do
     end
   end
 
-
   match "about" => 'welcome#about', via: :get
 
   root :to => 'welcome#index'

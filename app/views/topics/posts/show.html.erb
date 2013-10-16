@@ -4,13 +4,6 @@
     <%= render partial: 'votes/voter', locals: { topic: @topic, post: @post } %>
     <div class="right">
       <%= render partial: 'favorites/favorite', locals: { topic: @topic, post: @post } %>
-          <% if can? :edit, @post %>
-            <%= link_to "Edit", edit_topic_post_path(@topic,@post), class: 'btn btn-primary btn-large ' %>
-          <% end %>
-          <% if can? :destroy, @post %>
-            <%= link_to "Delete Post", [@topic, @post], method: :delete, class: 'btn btn-large btn-danger', confirm: 'Are you sure you want to delete this post?' %>
-          <% end %>   
-
     </div>
     <h1><%= markdown @post.title %></h1>
       <small>
@@ -22,6 +15,15 @@
     </div>
   </div>
   <br />
+  <% if can? :edit, @post %>
+    <div class="well blockbuttons">
+    <p>Since you created this post, you can also edit or delete it.</p>
+    <%= link_to "Edit", edit_topic_post_path(@topic,@post), class: 'btn btn-primary btn-large btn-block' %>
+  <% end %>
+  <% if can? :destroy, @post %>
+    <%= link_to "Delete Post", [@topic, @post], method: :delete, class: 'btn btn-large btn-danger btn-block', confirm: 'Are you sure you want to delete this post?' %>
+    </div>
+  <% end %>   
   <h5>Comments: <%= @comments.count %><br />
         Total post points: <%= @post.points %></h5>
 

@@ -4,8 +4,8 @@
     <% else %>
     	You'll need an account to upvote/downvote, comment and favorite. <%= link_to "Click here to Sign Up!", new_user_registration_path %>
     <% end %>
-    <h1>Popular</h1>
-    <p class="lead">Active posts this week</p>
+    <h1>Geddit's most popular posts from this week.</h1>
+    <hr>
     <%= render partial: 'posts/post', collection: @posts %>
     <%= will_paginate @posts %>
   </div>

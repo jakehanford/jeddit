@@ -1,7 +1,8 @@
 <div class="row">
   <div class="span8">
-    <h1>Popular Users</h1>
-    <p class="lead">Most active users</p>
+    <h1>Geddit's most popular Users</h1>
+    <h5>Fun stats</h5>
+    <hr>
     <%= render partial: 'users/user', collection: @users %>
     <%= will_paginate @posts %>
   </div>

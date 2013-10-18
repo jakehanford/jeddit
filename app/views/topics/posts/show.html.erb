@@ -30,8 +30,11 @@
     <%= render partial: 'comments/comment', collection: @comments %>
 
     <% if can? :create, Comment %>
-      <hr/>
-      <h4>Add a Comment!</h4>
-      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+      <a href="#" class="addComment">Add Comment</a>
+      <br />
+      <div class="commentForm none">
+        <h4>Add a Comment!</h4>
+        <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
+      </div>
     <% end %>
 </div>

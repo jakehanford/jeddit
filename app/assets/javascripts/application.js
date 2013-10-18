@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function() {
+  $(".jumbotron").hide().slideDown();
+});
+
+$(document).ready(function() {
+  $(".addComment").click(function(e) {
+  	e.preventDefault();
+
+    $(".commentForm.none").slideDown();
+    $(this).hide();
+  });
+});

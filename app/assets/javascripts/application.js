@@ -16,14 +16,13 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $(".jumbotron").hide().slideDown();
+  $(".jumbatron").fadeIn();
 });
 
 $(document).ready(function() {
   $(".addComment").click(function(e) {
   	e.preventDefault();
-
-    $(".commentForm.none").slideDown();
+    $(".commentForm.none").slideIn();
     $(this).hide();
   });
 });

@@ -19,12 +19,16 @@ html, body {
 	width: 90%;
 	padding: 50px;
 }
+h1 {
+	letter-spacing: -1px;
+}
 .postbody {
 	font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 1.45;
 	color: #333332;
+	word-wrap: break-word;
 }
 .blockbuttons {
 	width: 33%;

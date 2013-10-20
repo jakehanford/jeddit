@@ -5,7 +5,7 @@
     <div class="right">
       <%= render partial: 'favorites/favorite', locals: { topic: @topic, post: @post } %> 
     </div> 
-    <h1 class="bumptitle"><%= markdown @post.title %></h1>
+    <h1 class="bumptitle"><%= @post.title %></h1>
       <small>
 		    <%# image_tag(@post.user.avatar.url, class: "avatar") if @post.user.avatar? %>
 		    <p><%= @post.user.name %> submitted <%= time_ago_in_words(@post.created_at) %> ago and has
@@ -20,9 +20,7 @@
       <% end %>
       </p> 
       </small>
-      <div class="postbody">
-        <p><%= markdown @post.body %></p>
-      </div>
+      <div class="postbody"><%= markdown @post.body %></div>
     </div>
   </div>
   <br />

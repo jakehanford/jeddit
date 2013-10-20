@@ -7,8 +7,9 @@
 </head>
 <body>
   <%= render partial: 'layouts/nav' %>
+  <div class="appback">
     <div class="container">
-        <% if flash[:notice] %>
+      <% if flash[:notice] %>
         <div class="alert alert-success">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
           <%= flash[:notice] %>
@@ -24,12 +25,10 @@
           <%= flash[:alert] %>
         </div>
       <% end %>
-
-	<%= yield %>
-
-
-<%= render partial: 'layouts/footer' %>
-</div>
+	    <%= yield %>
+      <%= render partial: 'layouts/footer' %>
+    </div>
+  </div>
 <%= javascript_include_tag "application" %>
 </body>
 </html>

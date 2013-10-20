@@ -2,17 +2,17 @@
 	<h2 class="form-signin-heading">Please sign in</h2>
   	<div>
   		<%= f.label :email %><br />
-  		<%= f.email_field :email, class: "form-control", :autofocus => true %>
+  		<%= f.email_field :email, :placeholder => "Email", :autofocus => true %>
   	</div>
 
   	<div>
   		<%= f.label :password %><br />
-  		<%= f.password_field :password, class: "form-control" %>
+  		<%= f.password_field :password, :placeholder => "Password" %>
   	</div>
 
   	<% if devise_mapping.rememberable? -%>
     	<div>
-    		<%= f.check_box :remember_me, class: "checkbox" %> <%= f.label :remember_me %>
+    		<%= f.check_box :remember_me, class: "checkbox wide25" %> <%= f.label :remember_me %>
     	</div>
   	
   	<% end -%>

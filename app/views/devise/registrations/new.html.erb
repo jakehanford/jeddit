@@ -1,34 +1,37 @@
+<div class="signupbck">
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-signin formcontainer'}) do |f| %>
     <%= devise_error_messages! %>
-    <h2 class="form-signin-heading">Welcome!</h2>
-    <div class="control-group">
-        <%= f.label :name %>
-      <div>
-        <%= f.text_field :name, class: 'form-control', :autofocus => true %>
-      </div>
-    </div>
   
-  <div>
-    <%= f.label :email %><br />
-    <%= f.email_field :email, class: "form-control" %>
+      <h2 class="form-signin-heading">Welcome!</h2>
+      <div class="control-group">
+          <%= f.label :name %>
+        <div>
+          <%= f.text_field :name, :placeholder => "Name", :autofocus => true %>
+        </div>
+      </div>
+    
+    <div>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, :placeholder => "Email" %>
+    </div>
+
+    <div>
+      <%= f.label :password %><br />
+      <%= f.password_field :password, :placeholder => "Password" %>
+    </div>
+
+    <div>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
+    </div>
+
+    <br />
+
+    <div>
+      <%= f.submit "Sign up", class: "jbtn jbtn-green btn-block" %>
+    </div>
+
+    <%  end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div>
-    <%= f.label :password %><br />
-    <%= f.password_field :password, class: "form-control" %>
-  </div>
-
-  <div>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, class: "form-control" %>
-  </div>
-
-  <br />
-
-  <div>
-    <%= f.submit "Sign up", class: "jbtn jbtn-green btn-block" %>
-  </div>
-
-  <%  end %>
-
-  <%= render "devise/shared/links" %>

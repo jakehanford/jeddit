@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="span8">
-    <div class="postcontainer">
+  <div class="textleft">
+    <div class="postcontainer darkerback">
     <%= render partial: 'votes/voter', locals: { topic: @topic, post: @post } %>
     <div class="right">
       <%= render partial: 'favorites/favorite', locals: { topic: @topic, post: @post } %> 
@@ -8,13 +8,12 @@
     <h1 class="bumptitle"><%= @post.title %></h1>
       <small>
 		    <%# image_tag(@post.user.avatar.url, class: "avatar") if @post.user.avatar? %>
-		    <p><%= @post.user.name %> submitted <%= time_ago_in_words(@post.created_at) %> ago and has
+		    <p class="discrete"><%= @post.user.name %> submitted <%= time_ago_in_words(@post.created_at) %> ago and has
 		    <%= @post.comments.count %> Comments.
         <% if can? :edit, @post %>
-         Only you can make the following changes
+        Only you can make the following changes
             <%= link_to "Edit", edit_topic_post_path(@topic,@post) %> or 
-            <% end %>
-
+          <% end %>
         <% if can? :destroy, @post %>
               <%= link_to "Delete Post", [@topic, @post], method: :delete, confirm: 'Are you sure you want to delete this post?' %>
       <% end %>
@@ -24,17 +23,15 @@
     </div>
   </div>
   <br />
-  <h5>Comments: <%= @comments.count %><br />
+  <h5>Comments: <%= @comments.count %>,
         Total post points: <%= @post.points %></h5>
-
+  <a href="#" class="addComment">Show Comments</a>
+  <div class="commentForm none">
     <%= render partial: 'comments/comment', collection: @comments %>
 
     <% if can? :create, Comment %>
-      <a href="#" class="addComment">Add Comment</a>
-      <br />
-      <div class="commentForm none">
         <h4>Add a Comment!</h4>
-        <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>
-      </div>
+        <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>     
     <% end %>
+    </div>
 </div>

@@ -5,17 +5,70 @@ html, body {
 	height: 100%;
 	width: 100%;
 	overflow-x: hidden;
+	background-color: #7BA2B4;
 	font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
+	color: white;
 }
-.appback {
-	background-color: #F8E8C4;
-	width: 100%;
-	height: 100%;
+a, a:hover, a:active {
+	color: white;
+}
+.jbtn {
+	border: 0px;
+	display: inline-block;
+	padding: 12px 18px 13px;
+	margin-bottom: 5px;
+	font-size: 16.5px;
+	line-height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border-radius: 6px 6px 6px 6px;
+	box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.2) inset, 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+.jbtn:hover {
+	text-decoration: none;
+	color: black;
+}
+.jbtn-blue {
+	// Blue background-color: rgb(54, 127, 255);
+	background-color: #D5D8DB;
+	color: black;
+}
+.jbtn-green {
+	background-color: rgb(0, 221, 0);
+}
+.jbtn-grey {
+	background-color: #f3f3f3;
+	color: black;
+}
+.jbt-grey:hover {
+	background-color: #f9f9f9;
+}
+.jbtn-blue:hover {
+	// background-color: rgb(54, 100, 255);
+	background-color: #B1BDC3;
+	color: black;
+	text-decoration: none;
+}
+.darkerback {
+	background-color: #596771;
+	padding: 10px;
+	border-radius: 10px;
+}
+.popularback {
+	background-color: #596771;
+	padding: 15px;
+	border-radius: 10px;
+	color: white;
+}
+.jumbotron {
+	background-color: #596771;
+	color: white;
 }
 .none {
   display: none;
 }
-input {
+input, textarea {
 	line-height: normal;
 	border-width: medium medium 2px;
 	border-style: none none solid;
@@ -31,6 +84,12 @@ input {
 	padding: 10px 15px;
 	width: 100%;
 	margin-bottom: 15px;
+}
+.posts {
+  border: solid;
+  margin: 5px;
+  padding: 5px;
+  height: 200px;
 }
 input:active, input:focus {
     outline: medium none;
@@ -49,15 +108,25 @@ input:active, input:focus {
 }
 h1 {
 	letter-spacing: -1px;
-	z-index: -20;
+	z-index: -1;
+	color: white;
 }
 .postbody {
 	font-family: "ff-tisa-web-pro",Georgia,Cambria,"Times New Roman",Times,serif;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 1.45;
-	color: #333332;
+	color: white;
 	word-wrap: break-word;
+}
+.discrete {
+	color: #f3f3f3;
+	a, a:hover {
+		color: #f3f3f3;
+	}
+}
+.textleft{
+	text-align: left;
 }
 .blockbuttons {
 	width: 33%;
@@ -65,7 +134,7 @@ h1 {
 	margin-left: auto;
 }
 .bumptitle {
-	position: relative;
+	// position: relative;
 	bottom: 15px;
 }
 .avatar {
@@ -87,9 +156,15 @@ h1 {
 }
 .navbar {
 	margin-bottom: 0px;
+	background-color: #7BA2B4;
+	border-radius: 0px;
+	a, a:active {
+		color: white;
+	}
 }
 .nav {
   margin-top: 5px;
+
   .bumpright {
   	margin-right: 20px;
   }

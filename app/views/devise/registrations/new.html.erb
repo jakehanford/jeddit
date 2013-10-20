@@ -1,4 +1,4 @@
-<div class="signupbck">
+<div class="darkerback">
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-signin formcontainer'}) do |f| %>
     <%= devise_error_messages! %>
   
@@ -28,7 +28,7 @@
     <br />
 
     <div>
-      <%= f.submit "Sign up", class: "jbtn jbtn-green btn-block" %>
+      <%= f.submit "Sign up", class: "jbtn jbtn-blue btn-block" %>
     </div>
 
     <%  end %>

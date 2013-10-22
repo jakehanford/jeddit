@@ -164,10 +164,13 @@ h1 {
 }
 .nav {
   margin-top: 5px;
-
   .bumpright {
   	margin-right: 20px;
   }
+.nav > li > a:hover, .nav > li > a:focus {
+	color: white;
+	text-decoration: underline;
+}
   .navatar {
   	float: right;
 	position: relative;

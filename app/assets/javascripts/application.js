@@ -22,7 +22,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(".addComment").click(function(e) {
   	e.preventDefault();
-    $(".commentForm.none").slideDown();
+    $(".commentForm.none").fadeIn();
     $(this).hide();
   });
 });

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="textleft">
-    <div class="postcontainer darkerback">
+    <div class="postcontainer darkerback stationary">
     <%= render partial: 'votes/voter', locals: { topic: @topic, post: @post } %>
     <div class="right">
       <%= render partial: 'favorites/favorite', locals: { topic: @topic, post: @post } %> 
@@ -25,12 +25,12 @@
   <br />
   <h5>Comments: <%= @comments.count %>,
         Total post points: <%= @post.points %></h5>
-  <a href="#" class="addComment">Show Comments</a>
+  <button href="#" class="addComment jbtn jbtn-grey">Show Comments</button>
   <div class="commentForm none">
     <%= render partial: 'comments/comment', collection: @comments %>
 
     <% if can? :create, Comment %>
-        <h4>Add a Comment!</h4>
+        <h4>What do you think?</h4>
         <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @comment } %>     
     <% end %>
     </div>

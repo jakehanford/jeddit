@@ -167,10 +167,11 @@ h1 {
   .bumpright {
   	margin-right: 20px;
   }
-.nav > li > a:hover, .nav > li > a:focus {
+  li > a:hover {
 	color: white;
+	background-color: #7BA2B4;
 	text-decoration: underline;
-}
+   }
   .navatar {
   	float: right;
 	position: relative;
@@ -196,4 +197,7 @@ h1 {
 	position: relative;
 	float: right;
 	bottom: 60px;
+}
+.stationary	{
+	width: 100%;
 }

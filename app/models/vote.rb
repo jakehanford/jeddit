@@ -8,7 +8,7 @@ class Vote < ActiveRecord::Base
   after_save :update_post
 
   def update_post
-    self.post.update_rank  
+    self.post.update_rank
   end 
   
   def up_vote?

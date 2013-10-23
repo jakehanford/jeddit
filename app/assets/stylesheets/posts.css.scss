@@ -12,6 +12,12 @@ html, body {
 a, a:hover, a:active {
 	color: white;
 }
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover {
+	background-color: #7BA2B4;
+	color: white;
+	top: 1px;
+	text-decoration: none;
+}
 .jbtn {
 	border: 0px;
 	display: inline-block;
@@ -52,17 +58,20 @@ a, a:hover, a:active {
 }
 .darkerback {
 	background-color: #596771;
+	border: 1px white solid;
 	padding: 10px;
 	border-radius: 10px;
 }
 .popularback {
 	background-color: #596771;
+	border: 1px white solid;
 	padding: 15px;
 	border-radius: 10px;
 	color: white;
 }
 .jumbotron {
 	background-color: #596771;
+	border: 1px white solid;
 	color: white;
 }
 .none {

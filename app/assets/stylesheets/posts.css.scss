@@ -9,15 +9,6 @@ html, body {
 	font-family: "freight-sans-pro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Verdana,sans-serif;
 	color: white;
 }
-a, a:hover, a:active {
-	color: white;
-}
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover {
-	background-color: #49545D;
-	color: white;
-	top: 1px;
-	text-decoration: none;
-}
 .jbtn {
 	border: 0px;
 	display: inline-block;
@@ -85,7 +76,7 @@ a, a:hover, a:active {
 .none {
   display: none;
 }
-input, textarea {
+input[type=text], input[type=email], input[type=password], textarea {
 	line-height: normal;
 	border-width: medium medium 2px;
 	border-style: none none solid;
@@ -195,6 +186,15 @@ h1 {
 	position: relative;
 	bottom: 10px;
   }
+}
+a, a:hover, a:active {
+	color: white;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover {
+	background-color: #49545D;
+	color: white;
+	top: 1px;
+	text-decoration: none;
 }
 .formcontainer {
 	width: 460px;

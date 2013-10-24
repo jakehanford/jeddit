@@ -1,4 +1,4 @@
-<%= @posts.each do |post| %>
+<%- @posts.each do |post| %>
   <div class="media">
     <%= render partial: 'votes/voter', locals: { topic: post.topic, post: post } %>
     <%= link_to [post.topic, post], class: 'pull-left' do %>

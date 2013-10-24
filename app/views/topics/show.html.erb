@@ -8,4 +8,5 @@
   <div class="span8">
     <p class="lead"><%= @topic.description %></p>
     <%= render 'posts/post' %>
-    <%# will_paginate @posts %>
+    <hr>
+    <%= will_paginate @posts %>

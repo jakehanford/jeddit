@@ -6,7 +6,9 @@
 
 <div class="row">
   <div class="span8">
-    <p class="lead"><%= @topic.description %></p>
-    <%= render 'posts/post' %>
-    <hr>
-    <%= will_paginate @posts %>
+    	<p class="lead"><%= @topic.description %></p>
+    	<%= render 'posts/post' %>
+    	<hr>
+    	<%= will_paginate @posts %>
+	</div>
+</div>
